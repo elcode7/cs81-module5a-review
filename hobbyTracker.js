@@ -1,3 +1,5 @@
+// hobbyLog is an array of objects.
+// Each object represents one day and a hobby activity.
 const hobbyLog = [
   { day: "Monday", hobby: "drawing", minutes: 30, mood: "focused" },
   { day: "Tuesday", hobby: "reading", minutes: 20, mood: "relaxed" },
@@ -6,19 +8,23 @@ const hobbyLog = [
   { day: "Friday", hobby: "reading", minutes: 35, mood: "calm" }
 ];
 
+// totalTime calculates the total number of minutes
 function totalTime(log) {
   return log.reduce((sum, session) => sum + session.minutes, 0);
 }
 
+// uniqueHobbies returns a list of distinct hobby names
 function uniqueHobbies(log) {
   const names = log.map(entry => entry.hobby);
   return [...new Set(names)];
 }
 
+// longSessions filters sessions longer than a given number of minutes
 function longSessions(log, minMinutes) {
   return log.filter(entry => entry.minutes > minMinutes);
 }
 
+// countMood counts how many sessions match a specific mood
 function countMood(log, moodType) {
   return log.filter(entry => entry.mood === moodType).length;
 }
