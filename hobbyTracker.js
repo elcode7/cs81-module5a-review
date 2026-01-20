@@ -10,6 +10,8 @@ const hobbyLog = [
 
 // totalTime calculates the total number of minutes
 function totalTime(log) {
+  // It loops through the array and accumulates a single value.
+  // sum starts at 0, and session represents each object in the array.
   return log.reduce((sum, session) => sum + session.minutes, 0);
 }
 
@@ -21,11 +23,15 @@ function uniqueHobbies(log) {
 
 // longSessions filters sessions longer than a given number of minutes
 function longSessions(log, minMinutes) {
+  // It returns a new array containing only entries
+  // where the condition is true
   return log.filter(entry => entry.minutes > minMinutes);
 }
 
 // countMood counts how many sessions match a specific mood
 function countMood(log, moodType) {
+  // filter() returns all entries with the matching mood,
+  // and length gives the total count.
   return log.filter(entry => entry.mood === moodType).length;
 }
 
