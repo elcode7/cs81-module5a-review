@@ -1,3 +1,5 @@
+// GITHUB LINK https://github.com/elcode7/cs81-module5a-review.git
+
 // hobbyLog is an array of objects.
 // Each object represents one day and a hobby activity.
 const hobbyLog = [
